@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setengah Percaya, Setengah Tidak — Sejarah Panjang Penyangkalan Hari Kebangkitan oleh Quraisy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --bg-alt: #F2F1EC;
+    --ink: #1A1A1A;
+    --ink-soft: #3A3A3A;
+    --muted: #6B6B66;
+    --line: #E2E0D8;
+    --accent: #0F766E;
+    --accent-soft: #0F766E1A;
+    --accent-deep: #134E48;
+    --gold: #B08D3F;
+    --crimson: #8B1E1E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== Progress bar ===== */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--accent);
+    width: 0%;
+    z-index: 1000;
+    transition: width 0.1s;
+  }
+
+  /* ===== Top nav ===== */
+  .topnav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999;
+    background: rgba(250,250,247,0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .topnav .brand {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--accent-deep);
+    font-weight: 600;
+  }
+  .topnav .meta { color: var(--muted); }
+  .topnav .meta span { color: var(--ink); font-weight: 500; }
+
+  /* ===== Container ===== */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .container-wide {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ===== Hero / Cover ===== */
+  .hero {
+    padding: 160px 0 80px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 500px; height: 500px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 300px; height: 300px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    opacity: 0.7;
+  }
+  .hero .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 32px;
+  }
+  .hero .kicker::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--accent);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(40px, 6.5vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 28px;
+    max-width: 900px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent-deep);
+    font-weight: 600;
+  }
+  .hero .dek {
+    font-size: 21px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 660px;
+    font-weight: 400;
+  }
+  .hero .byline {
+    margin-top: 48px;
+    display: flex;
+    gap: 32px;
+    font-size: 13px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    flex-wrap: wrap;
+  }
+  .hero .byline span strong {
+    display: block;
+    color: var(--ink);
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 600;
+    margin-top: 4px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* ===== Epigraph ===== */
+  .epigraph {
+    padding: 80px 0 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .epigraph .verse-arabic {
+    font-family: 'Scheherazade New', 'Amiri', serif;
+    font-size: 38px;
+    line-height: 2;
+    color: var(--accent-deep);
+    direction: rtl;
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
+  .epigraph .verse-trans {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0 auto 16px;
+  }
+  .epigraph .verse-cite {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ===== Section ===== */
+  section.chapter {
+    padding: 90px 0 60px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .chapter-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .chapter h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin-bottom: 36px;
+    color: var(--ink);
+  }
+  .chapter h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1.3;
+    margin: 48px 0 18px;
+    color: var(--accent-deep);
+  }
+  .chapter p {
+    margin-bottom: 22px;
+    color: var(--ink-soft);
+    font-size: 18px;
+    line-height: 1.85;
+  }
+  .chapter p strong { color: var(--ink); font-weight: 600; }
+  .chapter p em { color: var(--accent-deep); font-style: italic; }
+
+  .drop-cap::first-letter {
+    font-family: 'Playfair Display', serif;
+    float: left;
+    font-size: 78px;
+    line-height: 0.85;
+    font-weight: 700;
+    margin: 8px 12px 0 0;
+    color: var(--accent-deep);
+  }
+
+  /* ===== Pull quote ===== */
+  .pullquote {
+    margin: 56px 0;
+    padding: 28px 0 28px 40px;
+    border-left: 3px solid var(--accent);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 26px;
+    line-height: 1.45;
+    color: var(--accent-deep);
+    font-weight: 500;
+  }
+  .pullquote cite {
+    display: block;
+    font-style: normal;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 16px;
+    font-weight: 600;
+  }
+
+  /* ===== Verse block ===== */
+  .verse-block {
+    background: var(--bg-alt);
+    border-radius: 4px;
+    padding: 40px 36px;
+    margin: 40px 0;
+    border-top: 2px solid var(--accent);
+    position: relative;
+  }
+  .verse-block::before {
+    content: '"';
+    position: absolute;
+    top: 8px; left: 14px;
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: var(--accent-soft);
+    line-height: 1;
+  }
+  .verse-arabic {
+    font-family: 'Scheherazade New', 'Amiri', serif;
+    font-size: 30px;
+    line-height: 2.1;
+    color: var(--accent-deep);
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 24px;
+    font-weight: 400;
+  }
+  .verse-trans {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+  .verse-cite {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* ===== Figure cards (key figures) ===== */
+  .figure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin: 48px 0;
+  }
+  .figure-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 28px 24px;
+    border-top: 3px solid var(--crimson);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .figure-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(15,118,110,0.08);
+  }
+  .figure-card .fc-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .figure-card .fc-epithet {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .figure-card .fc-desc {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  /* ===== Timeline ===== */
+  .timeline {
+    margin: 48px 0;
+    padding-left: 32px;
+    border-left: 2px solid var(--line);
+    position: relative;
+  }
+  .tl-item {
+    position: relative;
+    padding-bottom: 36px;
+  }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -39px;
+    top: 4px;
+    width: 12px; height: 12px;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+  }
+  .tl-item .tl-date {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .tl-item .tl-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .tl-item .tl-desc {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* ===== Stat callout ===== */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 32px;
+    margin: 48px 0;
+    padding: 36px 32px;
+    background: var(--accent-deep);
+    border-radius: 6px;
+    color: #fff;
+  }
+  .stat-row .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-row .stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+  }
+
+  /* ===== Two-column analysis ===== */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin: 40px 0;
+  }
+  @media (max-width: 680px) {
+    .two-col { grid-template-columns: 1fr; }
+  }
+  .two-col .col {
+    background: var(--bg-alt);
+    padding: 28px 24px;
+    border-radius: 6px;
+    border-top: 3px solid var(--accent);
+  }
+  .two-col .col.warn { border-top-color: var(--gold); }
+  .two-col .col h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .two-col .col p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* ===== Closing ===== */
+  .closing {
+    padding: 100px 0 80px;
+    text-align: center;
+    background: var(--bg-alt);
+    border-bottom: 1px solid var(--line);
+  }
+  .closing .bismillah {
+    font-family: 'Scheherazade New', 'Amiri', serif;
+    font-size: 32px;
+    color: var(--accent-deep);
+    direction: rtl;
+    margin-bottom: 24px;
+  }
+  .closing h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.2;
+    margin-bottom: 28px;
+    color: var(--ink);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .closing p {
+    max-width: 640px;
+    margin: 0 auto 22px;
+    color: var(--ink-soft);
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  footer {
+    padding: 40px 24px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  footer .star {
+    color: var(--accent);
+    margin: 0 8px;
+  }
+
+  /* Responsive nav hide on mobile */
+  @media (max-width: 640px) {
+    .topnav { padding: 12px 16px; }
+    .topnav .meta { display: none; }
+    .hero { padding: 110px 0 60px; }
+    section.chapter { padding: 60px 0 40px; }
+    .verse-block { padding: 28px 22px; }
+    .pullquote { padding: 20px 0 20px 28px; font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="topnav">
+  <div class="brand">Sejarah &amp; Tafsir</div>
+  <div class="meta">Makalah Panjang &middot; <span>11 Bab</span> &middot; Estimasi baca 15 menit</div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="container-wide">
+    <span class="kicker">Sejarah &middot; Tafsir &middot; Makkah al-Mukarramah</span>
+    <h1>Setengah Percaya,<br><em>Setengah Tidak.</em></h1>
+    <p class="dek">Bagaimana kaum Quraisy—penguasa Ka'bah, ahli dagang, pewaris Ibrahim—sampai pada titik di mana tidak ada lagi yang utuh percaya pada hari kebangkitan. Sebagian menolak total, sebagian ragu di hati namun menolak dengan mulut. Inilah kisah panjang di balik penyangkalan itu.</p>
+    <div class="byline">
+      <span>Naskah<strong>Sejarah Islam Klasik</strong></span>
+      <span>Tema<strong>Penyangkalan Yaum al-Qiyamah</strong></span>
+      <span>Sumber<strong>Al-Qur'an &amp; Sirah Nabawiyah</strong></span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ EPIGRAPH ============ -->
+<section class="epigraph">
+  <div class="container">
+    <p class="verse-arabic">وَقَالُوا۟ مَا هِىَ إِلَّا حَيَاتُنَا ٱلدُّنْيَا نَمُوتُ وَنَحْيَا وَمَا يُهْلِكُنَآ إِلَّا ٱلدَّهْرُ</p>
+    <p class="verse-trans">"Dan mereka berkata: 'Tidak ada kehidupan lain selain kehidupan di dunia ini; kami mati dan kami hidup, dan tidak ada yang membinasakan kami selain masa (waktu).'"</p>
+    <p class="verse-cite">— Al-Jatsiyah (45): 24</p>
+  </div>
+</section>
+
+<!-- ============ BAB 1 ============ -->
+<section class="chapter">
+  <div class="container">
+    <span class="chapter-num">Bab I &middot; Latar Belakang</span>
+    <h2>Siapa Quraisy Itu, dan Mengapa Kita Memperlakukan Mereka Serius</h2>
+
+    <p class="drop-cap">Pada awal abad ke-7 Masehi, Makkah adalah kota terkaya di Jazirah Arab. Bukan karena tanahnya—tanahnya gersang, berbatu, tandus. Makkah kaya karena Ka'bah. Ka'bah kuno itu, menurut tradisi Islam, didirikan kembali oleh Nabi Ibrahim dan putranya Ismail setelah berabad-abad ditinggalkan. Pada masa Quraisy, bangunan itu sudah penuh sesak oleh sekitar 360 berhala, mewakili setiap klan dan setiap kafilah dagang yang singgah.</p>
+
+    <p>Kedudukan sebagai penjaga Ka'bah memberi Quraisy dua hal: kekuasaan spiritual dan keuntungan ekonomi. Setiap tahun, kabilah-kabilah Arab dari seluruh semenanjung berdatangan untuk haji ke berhala-berhala mereka. Makkah menjadi pasar, tempat berniaga, tempat bernegosiasi, tempat bersumpah damai antar kabilah yang selama belasan tahun saling bunuh. <strong>Agama adalah bisnis, dan bisnis adalah agama</strong>.</p>
+
+    <div class="stat-row">
+      <div>
+        <div class="stat-num">360</div>
+        <div class="stat-label">Berhala mengelilingi Ka'bah pada masa kerasulan</div>
+      </div>
+      <div>
+        <div class="stat-num">± 10.000</div>
+        <div class="stat-label">Perkiraan penduduk Makkah abad ke-7 M</div>
+      </div>
+      <div>
+        <div class="stat-num">2×</div>
+        <div class="stat-label">Musim perdagangan besar: musim panas ke Suriah, musim dingin ke Yaman</div>
+      </div>
+    </div>
+
+    <p>Inilah panggungnya: masyarakat yang mengaku bertauhid kepada Ibrahim, tetapi dalam praktik menyekutukan Allah dengan ratusan perantara. Mereka adalah ahli waris tradisi yang sama sekali tidak mengenali warisan itu. Dan di tengah masyarakat inilah, pada usia 40 tahun, seorang laki-laki terpercaya—<em>al-amin</em>—menerima wahyu pertama di Gua Hira'. Berita yang ia bawa bukan sekadar "sembah satu Tuhan"; berita itu adalah <strong>"kamu semua akan dibangkitkan, dan akan diadili atas apa yang kamu kerjakan."</strong></p>
+
+    <p class="pullquote">
+      Pesan Nabi Muhammad ﷺ bukan pertama-tama tentang politik, bukan tentang harta, bukan tentang kabilah. Pesannya satu kalimat sederhana yang mengguncang fondasi Makkah: <em>al-ba'tsu ba'da al-mawt haqq</em>—dibangkitkan setelah mati itu benar.
+      <cite>Inti dakwah Makkah periode awal</cite>
+    </p>
+
+    <p>Bagi kita hari ini, kalimat itu terdengar seperti khotbah biasa. Bagi Quraisy, kalimat itu adalah bom. Karena di balik kalimat itu—jika benar—ada konsekuensi yang harus mereka tanggung seluruhnya: kekayaan mereka bukan milik mereka sendiri, kekuasaan mereka bukan hak mutlak, dan berhala-berhala yang memberi mereka penghasilan tahunan itu semuanya dari awal.</p>
+  </div>
+</section>
+
+<!-- ============ BAB 2 ============ -->
+<section class="chapter">
+  <div class="container">
+    <span class="chapter-num">Bab II &middot; Keyakinan Awal</span>
+    <h2>Allah Itu Ada—Tetapi Jauh, dan Tidak Peduli</h2>
+
+    <p>Hal yang sering disalahpahami: Quraisy bukanlah ateis. Mereka tidak menyangkal keberadaan Allah sebagai pencipta. Al-Qur'an sendiri mencatat pengakuan ini dengan telak:</p>
+
+    <div class="verse-block">
+      <p class="verse-arabic">وَلَئِن سَأَلْتَهُم مَّنْ خَلَقَ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضَ وَسَخَّرَ ٱلشَّمْسَ وَٱلْقَمَرَ لَيَقُولُنَّ ٱللَّهُ</p>
+      <p class="verse-trans">"Dan sungguh, jika kamu tanyakan kepada mereka: 'Siapakah yang menciptakan langit dan bumi dan menundukkan matahari dan bulan?' Tentu mereka akan menjawab: 'Allah.'"</p>
+      <p class="verse-cite">— Al-'Ankabut (29): 61</p>
+    </div>
+
+    <p>Jadi bukan keberadaan Allah yang mereka sangkal. Yang mereka sangkal adalah <strong>tauhid uluhiyyah</strong>—bahwa Allah satu-satunya yang berhak disembah, satu-satunya yang berhak menuntut pertanggungjawaban, satu-satunya yang akan membangkitkan manusia untuk dihisab. Konsep inilah yang membuat mereka gelisah, karena konsep ini sekaligus menghapus perantara-perantara yang selama ini memberi mereka kekuasaan.</p>
+
+    <p>Dalam pandangan dunia Quraisy, Allah adalah <em>allah al-ba'ith</em>—Tuhan yang tinggi, pencipta yang besar, tetapi tidak campur tangan dalam urusan harian. Dialah "Tuhan Besar", tetapi untuk hal-hal kecil—kesuburan, keselamatan perjalanan dagang, kemenangan dalam pertempuran klan—merekalah yang berlindung pada Hubal, Latta, 'Uzza, Manat, dan ratusan berhala lain. Berhala itu <strong>ganti mediator</strong>: ia bisa dilihat, disentuh, diberi persembahan, dan—yang terpenting—disetujui oleh para pemuka klan yang mengendalikan ritualnya.</p>
+
+    <h3>Konsekuensi Logis dari Tuhan yang Jauh</h3>
+
+    <p>Jika Allah itu jauh dan tidak peduli pada detail kehidupan manusia, maka logislah jika Ia juga tidak peduli pada kehidupan setelah mati. Maka muncullah ajaran yang—sebagaimana akan kita lihat—menjadi inti penyangkalan Quraisy: <em>tidak ada kebangkitan, tidak ada hisab, tidak ada surga, tidak ada neraka.</em> Yang ada hanyalah dunia ini. Yang ada hanyalah <em>dahr</em>—waktu—yang membinasakan segala sesuatu pada waktunya.</p>
+
+    <p>Inilah pondasi ideologis. Bukan ateisme melulu, tetapi <strong>deisme primitif yang dipadukan dengan materialisme praktis</strong>: Tuhan ada, tetapi tidak terlibat; kita hidup, mati, dan selesai. Paham inilah yang membuat dakwah Nabi ﷺ terasa begitu asing, begitu mengganggu, begitu revolusioner.</p>
+  </div>
+</section>
+
+<!-- ============ BAB 3 ============ -->
+<section class="chapter">
+  <div class="container">
+    <span class="chapter-num">Bab III &middot; Bentuk Penyangkalan</span>
+    <h2>Tiga Wajah Penyangkalan terhadap Hari Kebangkitan</h2>
+
+    <p>Al-Qur'an tidak menggambarkan penolakan Quraisy sebagai satu sikap seragam. Ada tiga nuansa penyangkalan yang berbeda, masing-masing dijawab oleh ayat-ayat Makkah secara khas.</p>
+
+    <h3>1. Penyangkalan total: "Hanya ada dunia ini"</h3>
+
+    <p>Bentuk paling jelas. Mereka menolak seluruh gagasan kehidupan setelah mati. Hidup berawal dari kelahiran dan berakhir di kuburan. Tidak ada yang membangkitkan tulang yang telah lapuk.</p>
+
+    <div class="verse-block">
+      <p class="verse-arabic">وَقَالُوٓا۟ أَءِذَا كُنَّا عِظَٰمًا وَرُفَٰتًا أَءِنَّا لَمَبْعُوثُونَ خَلْقًا جَدِيدًا</p>
+      <p class="verse-trans">"Dan mereka berkata: 'Apakah apabila kami telah menjadi tulang belulang dan aku telah hancur, apakah kami benar-benar akan dibangkitkan kembali sebagai makhluk yang baru?'"</p>
+      <p class="verse-cite">— Al-Isra' (17): 49</p>
+    </div>
+
+    <h3>2. Penyangkalan berdasarkan waktu: "Hanya dahr yang mematikan"</h3>
+
+    <p>Keyakinan khas Arab Jahiliyah: yang membunuh manusia bukanlah Allah yang memutuskan ajal, melainkan <em>dahr</em>—waktu itu sendiri. Dahr adalah kekuatan kosmis yang netral, tanpa kehendak, tanpa kehakiman. Kalau demikian, tidak ada pengadilan, tidak ada pembalasan, tidak ada Tuhan yang menuntut pertanggungjawaban. Inilah ayat yang menjadi epigraph makalah ini:</p>
+
+    <div class="verse-block">
+      <p class="verse-arabic">وَقَالُوا۟ مَا هِىَ إِلَّا حَيَاتُنَا ٱلدُّنْيَا نَمُوتُ وَنَحْيَا وَمَا يُهْلِكُنَآ إِلَّا ٱلدَّهْرُ</p>
+      <p class="verse-trans">"Dan mereka berkata: 'Tidak ada kehidupan lain selain kehidupan di dunia ini; kami mati dan kami hidup, dan tidak ada yang membinasakan kami selain masa (waktu).'..."</p>
+      <p class="verse-cite">— Al-Jatsiyah (45): 24</p>
+    </div>
+
+    <p>Ayat berikutnya langsung membantah: <em>"...padahal mereka tiada mempunyai pengetahuan tentang itu, mereka hanya menduga."</em> Penyangkalan ini bukan berdasarkan argumen, melainkan dugaan—rasa, kebiasaan, kepentingan.</p>
+
+    <h3>3. Penyangkalan sarkastik: "Beri mukjizat, kalau benar"</h3>
+
+    <p>Bentuk ketiga adalah penyangkalan yang menyamar sebagai tuntutan rasional: "Kalau memang ada kebangkitan, tunjukkan kepada kami sekarang. Bangkitkan kakek kami yang telah jadi tulang. Turunkan malaikat. Buat sumber air mengalir dari batu. Baru kami percaya."</p>
+
+    <div class="verse-block">
+      <p class="verse-arabic">وَقَالُوا۟ لَن نُّؤْمِنَ لَكَ حَتَّىٰ تَفْجُرَ لَنَا مِنَ ٱلْأَرْضِ يَنْبُوعًا ۝ أَوْ تَكُونَ لَكَ جَنَّةٌ مِّن نَّخِيلٍ وَعِنَبٍ فَتُفَجِّرَ ٱلْأَنْهَٰرَ خِلَٰلَهَا تَفْجِيرًا</p>
+      <p class="verse-trans">"Dan mereka berkata: 'Kami tidak akan beriman kepadamu sebelum engkau memancarkan mata air dari bumi untuk kami, atau engkau memiliki kebun kurma dan anggur lalu engkau alirkan sungai-sungai di celah-celahnya...'"</p>
+      <p class="verse-cite">— Al-Isra' (17): 90–91 — daftar tuntutan mukjizat oleh Quraisy</p>
+    </div>
+
+    <p>Tuntutan ini, dalam Al-Qur'an, bukan tanda kerinduan akan kebenaran—melainkan taktik menunda. Karena mukjizat yang diminta adalah jenis yang tidak akan diberikan: kebangkitan massal sebelum tiba waktunya, sesuatu yang justru mendahului ketetapan Allah.</p>
+  </div>
+</section>
+
+<!-- ============ BAB 4 ============ -->
+<section class="chapter">
+  <div class="container">
+    <span class="chapter-num">Bab IV &middot; Akar Keraguan</span>
+    <h2>Empat Akar yang Menumbuhkan Penolakan</h2>
+
+    <p>Penolakan tidak muncul dari udara kosong. Ada empat akar yang, secara bersama-sama, membuat penyangkalan hari kebangkitan begitu meluas di kalangan Quraisy—dan, sebagaimana akan kita lihat nanti, juga membuat penyangkalan itu tidak seragam.</p>
+
+    <div class="two-col">
+      <div class="col">
+        <h4>1. Tradisi Leluhur</h4>
+        <p>"Kami mendapati bapak-bapak kami beragama begini, dan kami akan mengikuti jejak mereka." Argumen ini diulang-ulang dalam Al-Qur'an. Bukan argumen kebenaran, melainkan argumen kelaziman. Lebih mudah mewarisi kepercayaan daripada mempertanyakannya.</p>
+      </div>
+      <div class="col warn">
+        <h4>2. Kesombongan Kelas Elit</h4>
+        <p>Bagi Abu Jahal, Walid bin Mughirah, Utbah bin Rabi'ah, menerima risalah berarti menerima bahwa budak Bilal, budak perempuan Sumayyah, pemuda miskin 'Ammar, sama nilainya di hadapan Allah dengan mereka. Ini tidak terbayangkan. Hari kebangkitan menyetarakan semua orang—dan justru itu yang tidak bisa mereka terima.</p>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="col warn">
+        <h4>3. Kepentingan Ekonomi Ka'bah</h4>
+        <p>Ka'bah dengan 360 berhala adalah mesin ekonomi. Setiap kabilah Arab punya berhala di sana, dan kabilah-kabilah itu datang membawa persembahan dan barang dagangan. Membongkar politeisme berarti membongkar seluruh model bisnis Makkah. Mereka tidak ingin menjadi miskin demi kebenaran yang abstrak.</p>
+      </div>
+      <div class="col">
+        <h4>4. Materialisme dan Ketakterbayangan</h4>
+        <p>Tulang yang telah lapuk menjadi tanah, bagaimana bisa dirangkai kembali? Ini bukan hanya keberatan teologis—ini juga keberatan pengalaman inderawi. Mereka tidak pernah melihat tulang lapuk kembali hidup. Maka mereka simpulkan: yang tidak pernah terlihat, tidak mungkin terjadi.</p>
+      </div>
+    </div>
+
+    <p class="pullquote">
+      Empat akar ini—tradisi, kesombongan, ekonomi, materialisme—tidak berdiri sendiri-sendiri. Mereka saling menguatkan. Tradisi memberi legitimasi, kesombongan memberi kekuatan, ekonomi memberi insentif, materialisme memberi alasan. Empat-empatnya membuat penyangkalan hari kebangkitan menjadi posisi yang rasional dari sudut pandang Quraisy.
+      <cite>Analisis tafsir klasik &amp; sosiologi agama</cite>
+    </p>
+
+    <h3>Yang Membuat Mereka Tidak Bantah Keras</h3>
+
+    <p>Tetapi—andai penyangkalan itu benar-benar utuh, mengapa banyak di antara mereka, ketika Al-Qur'an dibacakan, terdiam? Mengapa Utbah bin Rabi'ah, setelah mendengarkan Surah Fushshilat, kembali ke kaumnya dengan wajah berubah? Mengapa Abu Jahal sendiri diam-diam datang mendengarkan Nabi ﷺ membaca Al-Qur'an di malam hari?</p>
+
+    <p>Karena penyangkalan mereka tidak utuh. Inilah kunci yang akan kita dalami di bab berikutnya.</p>
+  </div>
+</section>
+
+<!-- ============ BAB 5 ============ -->
+<section class="chapter">
+  <div class="container">
+    <span class="chapter-num">Bab V &middot; Yang Setengah Percaya</span>
+    <h2>Antara Hati yang Yakin dan Mulut yang Menolak</h2>
+
+    <p>Inilah bagian paling sering dilupakan dalam kisah Quraisy. Bukan hanya dua kubu—mukmin vs kafir—melainkan ada zona abu-abu yang luas. <strong>Ada yang ragu, ada yang percaya diam-diam, ada yang percaya pada sebagian dan menolak sebagian lain.</strong> Al-Qur'an sendiri membedakan beberapa tipologi penolak: ada yang mendustakan karena kebodohan, ada yang mendustakan karena kesombongan padahal jiwa mereka yakin, ada yang ragu-ragu tanpa bisa memutuskan.</p>
+
+    <div class="verse-block">
+      <p class="verse-arabic">وَجَحَدُوا۟ بِهَا وَٱسْتَيْقَنَتْهَآ أَنفُسُهُمْ ظُلْمًا وَعُلُوًّا</p>
+      <p class="verse-trans">"Dan mereka mengingkarinya karena kezaliman dan kesombongan (mereka), padahal jiwa mereka meyakininya."</p>
+      <p class="verse-cite">— An-Naml (27): 14</p>
+    </div>
+
+    <p>Ayat ini adalah diagnosis paling akurat atas kondisi sebagian besar elit Quraisy. <strong>Jiwa mereka yakin—tetapi mulut mereka menolak.</strong> Mengapa? Karena menerima berarti membayar harga yang terlalu tinggi.</p>
+
+    <h3>Tiga Tipologi "Setengah Percaya"</h3>
+
+    <p><strong>(1) Yakin di hati, menolak dengan mulut.</strong> Inilah Abu Jahal. Sejarah mencatat, ia pernah mendengar Nabi ﷺ membaca Al-Qur'an di malam hari dari balik tirai rumahnya. Pagi harinya, Abu Jahal sendiri mengaku kepada Abu Sufyan: "Sesungguhnya aku tahu apa yang ia bawa itu benar." Tetapi ia menolak beriman karena, katanya, "Kalau aku ikut dia, Bani Makhzum akan dicela: 'Amr mengikuti kemenakanmu karena kau kalah.' Aku tidak akan ikut selamanya." Alasan bukan ketidakpercayaan—alasannya adalah harga sosial.</p>
+
+    <p><strong>(2) Yakin pada tauhid uluhiyyah, ragu pada ba'ts.</strong> Beberapa pemuka Quraisy—terutama yang dikenal sebagai <em>al-Hunafa'</em> sebelum kerasulan—sudah lama meragukan politeisme. Mereka percaya Allah itu satu, tetapi belum tentu percaya pada kebangkitan jasmani. Waraqah bin Naufal, paman Khadijah, termasuk dalam kelompok ini. Tipologi ini dekat dengan intelektual yang rasional: menerima keberadaan Tuhan tetapi kesulitan dengan mukjizat.</p>
+
+    <p><strong>(3) Ragu-ragu tanpa keputusan.</strong> Kelompok ketiga: tidak menolak total, tidak menerima penuh. Mereka menunggu, memperhatikan, mengikuti perkembangan dari kejauhan. Abu Thalib, paman Nabi ﷺ, dalam beberapa riwayat termasuk dalam zona ini—melindungi keponakannya, mendukung dakwahnya dengan tindakan, tetapi hingga akhir hayat masih dalam keraguan tentang keimanannya secara formal.</p>
+
+    <p class="pullquote">
+      Penolakan Quraisy atas hari kebangkitan, dalam banyak kasus, bukanlah ketidakpercayaan intelektual. Ialah penyangkalan yang berpura-pura ketidakpercayaan, untuk menghindari harga yang harus dibayar jika kebenaran itu diakui.
+      <cite>Diagnosis Al-Qur'an atas manusia</cite>
+    </p>
+  </div>
+</section>
+
+<!-- ============ BAB 6 — Tokoh Kunci ============ -->
+<section class="chapter">
+  <div class="container-wide">
+    <span class="chapter-num">Bab VI &middot; Tokoh Kunci</span>
+    <h2>Wajah-wajah di Balik Penolakan</h2>
+
+    <p>Dengan kerangka empat akar di atas, mari kita lihat tokoh-tokoh yang menjadi lambang penolakan Quraisy. Masing-masing mewakili satu kombinasi akar yang berbeda.</p>
+
+    <div class="figure-grid">
+      <div class="figure-card">
+        <div class="fc-name">Abu Jahal</div>
+        <div class="fc-epithet">'Amr bin Hisham &middot; Bani Makhzum</div>
+        <div class="fc-desc">Dijuluki "Firaun umat ini". Yakin di hati akan kebenaran Nabi, tetapi menolak karena takut dicela oleh klan Bani Makhzum. Tipologi klasik: jiwa yakin, mulut menolak. Terbunuh di Badar oleh dua pemuda: Mu'adz bin 'Afra' dan Mu'awwidz bin 'Afra'.</div>
+      </div>
+      <div class="figure-card">
+        <div class="fc-name">Abu Lahab</div>
+        <div class="fc-epithet">'Abdul Uzza &middot; Paman Nabi ﷺ</div>
+        <div class="fc-desc">Satu-satunya yang secara langsung disebut namanya dalam Al-Qur'an (Surah Al-Lahab). Penolakannya bersifat keluarga—iri pada kepemimpinan yang berpindah dari Bani Hasyim ke kemenakannya. Mewakili akar kesombongan klan.</div>
+      </div>
+      <div class="figure-card">
+        <div class="fc-name">Walid bin Mughirah</div>
+        <div class="fc-epithet">Bani Makhzum &middot; Elit ekonomi</div>
+        <div class="fc-desc">Salah satu orang terkaya di Makkah. Penolakannya didorong kepentingan ekonomi dan posisi sosial. Namun Al-Qur'an mencatat ia sendiri pernah mengakui keindahan kalimat Nabi ﷺ sebelum akhirnya menuduhnya "sihir".</div>
+      </div>
+      <div class="figure-card">
+        <div class="fc-name">'Utbah bin Rabi'ah</div>
+        <div class="fc-epithet">Bani 'Abdu Syams &middot; Senior Quraisy</div>
+        <div class="fc-desc">Dikirim untuk bernegosiasi dengan Nabi ﷺ—ditawari harta, kepemimpinan, pengobatan. Mendengarkan Surah Fushshilat dan terdiam. Kembali dengan peringatan: "Biarkan dia, jangan ganggu." Tipologi yakin tetapi tidak mau ambil risiko.</div>
+      </div>
+      <div class="figure-card">
+        <div class="fc-name">Umayyah bin Khalaf</div>
+        <div class="fc-epithet">Bani Jumah &middot; Tuan Bilal</div>
+        <div class="fc-desc">Tuan budak Bilal bin Rabah. Mewakili akar materialisme dan kasta—tidak menerima budaknya setara dengannya di hadapan Allah. Terbunuh di Badar oleh budaknya sendiri.</div>
+      </div>
+      <div class="figure-card">
+        <div class="fc-name">'As bin Wa'il</div>
+        <div class="fc-epithet">Bani Sahm &middot; Penyangkah resurreksi</div>
+        <div class="fc-desc">Tokoh yang meremehkan Nabi ﷺ dengan ucapan: "Biarlah dia; setelah dia mati, kita warisi." Al-Qur'an menjawab dengan surah Al-Kautsar dan ancaman "al-abtar"—yang terpotong nasabnya. Mewakili penyangkalan kebangkitan secara langsung.</div>
+      </div>
+      <div class="figure-card">
+        <div class="fc-name">An-Nadr bin Al-Harits</div>
+        <div class="fc-epithet">Penyebar kisah Persia</div>
+        <div class="fc-desc">Membawa kisah raja Persia (Rustum, Isfandiyar) untuk menyaingi Al-Qur'an. Mewakili akar intelektual: mencoba menggeser perhatian dari wahyu ke hiburan. Dihukum mati setelah Badar.</div>
+      </div>
+      <div class="figure-card">
+        <div class="fc-name">Al-'Ash bin Wa'il</div>
+        <div class="fc-epithet">Bani Sahm</div>
+        <div class="fc-desc">Tokoh yang mengolok-olok Nabi ﷺ dengan tuduhan "abtar"—tidak beranak laki-laki. Penolakannya didasari keyakinan bahwa keberlangsungan hanya ada pada keturunan laki-laki, bukan pada kebangkitan.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BAB 7 — KRONOLOGI ============ -->
+<section class="chapter">
+  <div class="container">
+    <span class="chapter-num">Bab VII &middot; Kronologi</span>
+    <h2>Garis Waktu Penolakan: Dari Wahyu Pertama hingga Boikot</h2>
+
+    <p>Penolakan tidak terjadi dalam satu malam. Selama 13 tahun di Makkah, konflik antara tauhid dan politeisme, antara "akan ada kebangkitan" dan "tidak ada kehidupan lain", memuncak dalam beberapa babak.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Pra-610 M &middot; Masa Jahiliyyah</div>
+        <div class="tl-title">Empat Hunafa mencari agama Ibrahim</div>
+        <div class="tl-desc">Waraqah bin Naufal, 'Utbah bin Rabi'ah (yang berbeda dari 'Utbah senior), 'Uthman bin Huwairits, Zaid bin 'Amr bin Nufail—empat pemuka Quraisy yang tidak puas dengan politeisme. Mereka mencari agama Ibrahim asli. Sebagian menjadi Nasrani, sebagian hanif. Inilah bukti bahwa keraguan terhadap berhala sudah lama ada di kalangan Quraisy—tetapi belum sampai pada keyakinan penuh akan kebangkitan.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">± 610 M &middot; Gua Hira'</div>
+        <div class="tl-title">Wahyu pertama: "Bacalah!"</div>
+        <div class="tl-desc">Jibril turun dengan Surah Al-'Alaq. Lima ayat pertama. Pesannya: ada yang harus dibaca—ada yang harus dipikirkan—ada yang harus disampaikan. Hari kebangkitan belum disebut eksplisit, tetapi pondasinya sudah diletakkan: ada Pencipta, ada Yang Mengajarkan, ada yang akan diberitahukan.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">610–613 M &middot; Dakwah Sembunyi-sembunyi</div>
+        <div class="tl-title">Tiga tahun pertama: lingkaran terbatas</div>
+        <div class="tl-desc">Khadijah, 'Ali, Zaid, Abu Bakar, 'Utsman, Zubair, 'Abdurrahman, Thalhah, Sa'd—para pemeluk Islam pertama. Dakwah masih diam-diam. Quraisy belum terganggu, karena belum mengancam ekonomi ritual Ka'bah.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">± 613 M &middot; Pengumuman Terbuka</div>
+        <div class="tl-title">Nabi ﷺ naik ke Bukit Shafa</div>
+        <div class="tl-desc">"Wahai Quraisy, sesungguhnya aku adalah pembawa peringatan bagi kamu sebelum datang azab yang pedih." Abu Lahab langsung melempar batu dan mengutuk. Sejak saat ini, penolakan menjadi publik dan terorganisir.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">613–615 M &middot; Penganiayaan Pertama</div>
+        <div class="tl-title">Bilal, keluarga Yasir, 'Ammar</div>
+        <div class="tl-desc">Para budak dan orang miskin yang masuk Islam menjadi sasaran. Bilal ditindih batu di tengah panas. Sumayyah, ibu 'Ammar, menjadi syahidah pertama—ditikam oleh Abu Jahal. Konflik tidak lagi hanya ideologis; ia menjadi fisik dan brutal.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">± 615 M &middot; Hijrah Pertama ke Habasyah</div>
+        <div class="tl-title">12 laki-laki dan 4 perempuan hijrah</div>
+        <div class="tl-desc">Sebagian sahabat—termasuk 'Utsman bin 'Affan dan Ruqayyah—hijrah ke Habasyah (Ethiopia), karena rajanya adil. Ini pengakuan: dakwah di Makkah menemui jalan buntu di kalangan elit Quraisy.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">± 616 M &middot; Hamzah dan 'Umar Masuk Islam</div>
+        <div class="tl-title">Dua kekuatan baru bagi kaum lemah</div>
+        <div class="tl-desc">Hamzah bin 'Abdul Muthalib—pemburu tangguh—masuk Islam setelah membela keponakannya. 'Umar bin Khattab—dikenal keras—masuk Islam setelah membaca Surah Thaha. Sejak saat itu, Quraisy tidak lagi bisa menganiaya sahabat semena-mena.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">616–619 M &middot; Boikot Bani Hasyim</div>
+        <div class="tl-title">Tiga tahun pengucilan di Syi'ib Abu Thalib</div>
+        <div class="tl-desc">Quraisy menyepakati boikot ekonomi dan sosial terhadap Bani Hasyim. Tidak ada jual-beli, tidak ada pernikahan. Anak-anak kelaparan. Inilah bukti bahwa penolakan ideologis Quraisy berujung pada tindakan kolektif yang kejam. Boikot berakhir setelah lembaran perjanjian yang ditulis mereka—disimpan di Ka'bah—dimakan rayap, kecuali kalimat "bismikallahumma".</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">619–620 M &middot; Tahun Kesedihan</div>
+        <div class="tl-title">Wafat Abu Thalib dan Khadijah</div>
+        <div class="tl-desc">Dalam tahun yang sama, Nabi ﷺ kehilangan dua pelindung utama: paman dan istri. Dakwah masuk fase paling sulit. Penolakan Quraisy mencapai titik paling kuat—karena mereka merasa bebas dari tekanan Bani Hasyim.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">620 M &middot; Tha'if dan Isra' Mi'raj</div>
+        <div class="tl-title">Ditolak di Tha'if, diangkat ke langit</div>
+        <div class="tl-desc">Penolakan tidak hanya dari Quraisy—Tha'if pun menolak dan melempari Nabi ﷺ dengan batu hingga berdarah. Namun pada tahun yang sama, Isra' Mi'raj terjadi: perjalanan ke Baitulmaqdis lalu naik ke langit. Di sinilah shalat lima waktu disyariatkan. Sebuah jawaban gaib atas penolakan material: kamu menolak hari kebangkitan? Lihatlah sendiri dunia gaib itu.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">622 M &middot; Hijrah ke Madinah</div>
+        <div class="tl-title">Akhir babak Makkah, awal babak Madinah</div>
+        <div class="tl-desc">Tiga belas tahun dakwah di Makkah berakhir dengan hijrah. Penolakan Quraisy tidak surut—justru mereka menyusul rencana pembunuhan. Tetapi dari Madinah, cahaya tauhid dan keyakinan akan hari kebangkitan akan menyebar luas, dan dalam delapan tahun Makkah akan ditaklukkan tanpa pertumpahan darah.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BAB 8 — ANALISIS ============ -->
+<section class="chapter">
+  <div class="container">
+    <span class="chapter-num">Bab VIII &middot; Analisis</span>
+    <h2>Mengapa Akhirnya "Tidak Ada yang Utuh Percaya"?</h2>
+
+    <p>Pertanyaan pengguna yang menarik: bagaimana bisa sampai pada titik di mana <strong>"tidak ada yang percaya hari kebangkitan"</strong>, hanya "separuh percaya dan separuh tidak"? Mari kita perjelas. Yang dimaksud bukan bahwa 0% orang Makkah beriman. Ada puluhan—bahkan ratusan—saqaliba, budak, pemuda, perempuan, yang beriman penuh. Yang dimaksud adalah <em>di kalangan elit Quraisy penguasa</em>, keyakinan penuh menjadi langka, dan yang banyak adalah kondisi setengah-setengah.</p>
+
+    <h3>Empat Mekanisme yang Menjelaskan "Setengah Percaya"</h3>
+
+    <p><strong>(1) Biaya sosial yang terlalu mahal.</strong> Di sistem klan Makkah, berpindah agama berarti keluar dari klan. Keluar dari klan berarti kehilangan perlindungan, kehilangan hak waris, kehilangan posisi dagang. Bagi elit, harga ini tidak terjangkau. Sehingga meski hati yakin, tindakan terlambat. Hati percaya, status menolak.</p>
+
+    <p><strong>(2) Kebingungan intelektual tentang kebangkitan jasmani.</strong> Bahkan para hanafa' yang menerima tauhid uluhiyyah, banyak yang kesulitan menerima bahwa tulang yang telah lapuk akan dirangkai kembali. Al-Qur'an menjawab ini berulang-ulang dengan argumen dari penciptaan awal: "Apakah Kami yang menciptakan kamu dari awal, tidak akan mampu mengumpulkan kembali?" Argumentasi ini—sebagaimana kita lihat di Bab 9—diulang dalam setidaknya lima surah Makkah.</p>
+
+    <p><strong>(3) Pengaruh kelompok.</strong> Di tengah masyarakat klan, keputusan iman sangat jarang bersifat individual. Ikut klan, ikut tradisi, ikut suara mayoritas—ini lebih kuat daripada pertimbangan pribadi. Bahkan Abu Thalib, dengan segala kedekatannya pada Nabi ﷺ, tidak secara terbuka masuk Islam. Mengapa? Karena posisinya sebagai kepala Bani Hasyim terlalu berat untuk ditinggalkan.</p>
+
+    <p><strong>(4) Tipologi psikologis: "mendengar tapi tidak mendengarkan".</strong> Al-Qur'an menggunakan istilah <em>"summun, bukmun, 'umyun"</em>—tuli, bisu, buta—untuk sebagian penolak. Bukan mereka tidak mendengar suara; mereka tidak memproses. Ini fenomena psikologis universal: ketika pesan mengancam kepentingan inti, otak manusia menutup pintu pemrosesan, meski telinga terbuka.</p>
+
+    <p class="pullquote">
+      Inilah mengapa Al-Qur'an menggunakan kata <em>"dzannun"</em>—dugaan—untuk menggambarkan pengetahuan Quraisy tentang ketiadaan kebangkitan. Mereka tidak tahu; mereka hanya mengira. Dan mengira ini mereka pegang teguh—bukan karena kuat, melainkan karena alternatifnya terlalu mahal.
+      <cite>Sintesis tafsir An-Naml, Al-Jatsiyah, Al-Mu'minun</cite>
+    </p>
+  </div>
+</section>
+
+<!-- ============ BAB 9 — AYAT-AYAT TURUN ============ -->
+<section class="chapter">
+  <div class="container">
+    <span class="chapter-num">Bab IX &middot; Jawaban Wahyu</span>
+    <h2>Ayat-Ayat yang Turun untuk Menghadapi Penyangkalan</h2>
+
+    <p>Al-Qur'an tidak hanya mencatat penolakan; ia menjawabnya. Setiap bentuk penyangkalan—penyangkalan total, dahr, tuntutan mukjizat—mendapat jawaban tersendiri. Berikut seleksi ayat-ayat Makkah yang paling langsung membahas persoalan ini.</p>
+
+    <div class="verse-block">
+      <p class="verse-arabic">أَوَلَمْ يَرَ ٱلْإِنسَٰنُ أَنَّا خَلَقْنَٰهُ مِن نُّطْفَةٍ فَإِذَا هُوَ خَصِيمٌ مُّبِينٌ ۝ وَضَرَبَ لَنَا مَثَلًا وَنَسِىَ خَلْقَهُ ۖ قَالَ مَن يُحْىِ ٱلْعِظَٰمَ وَهِىَ رَمِيمٌ ۝ قُلْ يُحْيِيهَا ٱلَّذِىٓ أَنشَأَهَآ أَوَّلَ مَرَّةٍ</p>
+      <p class="verse-trans">"Dan tidakkah manusia memperhatikan bahwa Kami menciptakannya dari setetes mani, maka tiba-tiba ia menjadi penantang yang nyata? Dan ia membuat perumpamaan bagi Kami, dan ia lupa kepada penciptaannya; ia berkata: 'Siapakah yang akan menghidupkan tulang-belulang yang telah hancur luluh?' Katakanlah: 'Yang akan menghidupkannya ialah Yang menciptakannya pada awal kali...'"</p>
+      <p class="verse-cite">— Yasin (36): 77–79</p>
+    </div>
+
+    <p>Argumen Yasin ini elegan: jika Dia mampu menciptakan dari setetes mani—dari tidak ada menjadi ada—mengapa mustahil bagi-Nya mengembalikan dari tulang yang lapuk? <strong>Kesulitan kebangkitan tidak lebih besar daripada kesulitan penciptaan awal.</strong></p>
+
+    <div class="verse-block">
+      <p class="verse-arabic">وَقَالُوا۟ أَءِذَا مِتْنَا وَكُنَّا تُرَابًا وَعِظَٰمًا أَءِنَّا لَمَبْعُوثُونَ ۝ لَقَدْ وَعَدْنَٰكُمْ وَعِدْنَا نَحْنُ وَءَابَآؤُنَآ إِنْ هَٰذَآ إِلَّا أَسَٰطِيرُ ٱلْأَوَّلِينَ</p>
+      <p class="verse-trans">"Dan mereka berkata: 'Apakah apabila kami telah mati dan kami telah menjadi tanah dan tulang-belulang, apakah kami benar-benar akan dibangkitkan? Sungguh, kami dan bapak-bapak kami telah diberi ancaman ini sebelumnya; ini tidak lain hanyalah dongengan orang-orang dahulu.'"</p>
+      <p class="verse-cite">— An-Naml (27): 67–68</p>
+    </div>
+
+    <p>An-Naml menyingkap satu lapisan lain: penyangkalan ini bukan hal baru. Bahkan generasi sebelumnya juga sudah diingatkan. Kebangkitan bukan konsep baru yang baru Nabi ﷙ bawa—itu sudah dalam risalah-risalah para nabi terdahulu, tetapi terus-menerus didustakan.</p>
+
+    <div class="verse-block">
+      <p class="verse-arabic">أَيَحْسَبُ ٱلْإِنسَٰنُ أَن يُتْرَكَ سُدًى</p>
+      <p class="verse-trans">"Apakah manusia mengira bahwa ia akan dibiarkan begitu saja (tanpa pertanggungjawaban)?"</p>
+      <p class="verse-cite">— Al-Qiyamah (75): 36</p>
+    </div>
+
+    <p>Satu kalimat tajam. Manusia diciptakan, diberi akal, diberi kehendak—lalu dibiarkan begitu saja? Logikanya sendiri menolak. Kalau tidak ada pertanggungjawaban, kenapa repot-repot menciptakan? Untuk apa memberi akal kalau tidak akan ditanya?</p>
+
+    <div class="verse-block">
+      <p class="verse-arabic">نَحْنُ نَقُصُّ عَلَيْكَ أَحْسَنَ ٱلْقَصَصِ</p>
+      <p class="verse-trans">"Kami kisahkan kepadamu cerita yang sebaik-baiknya..."</p>
+      <p class="verse-cite">— Yusuf (12): 3 — pembuka banyak surah kisah Makkah</p>
+    </div>
+
+    <p>Argumen terakhir yang dipakai Al-Qur'an adalah <strong>persaksian sejarah</strong>: kisah-kisah kaum terdahulu yang mendustakan rasul lalu dibinasakan—kaum Nuh, 'Ad, Tsamud, Luth, Firaun. Mereka juga tidak percaya pada kebangkitan; mereka berakhir dengan kebangkitan dalam bentuk hukuman di dunia. <em>Hukuman itu sendiri bukti bahwa Tuhan tidak meninggalkan manusia begitu saja.</em></p>
+  </div>
+</section>
+
+<!-- ============ BAB 10 — REFLEKSI ============ -->
+<section class="chapter">
+  <div class="container">
+    <span class="chapter-num">Bab X &middot; Refleksi</span>
+    <h2>Pola yang Berulang: Hikmah untuk Hari Ini</h2>
+
+    <p>Inilah bagian yang membuat sejarah Quraisy bukan sekadar cerita lama. Pola yang sama berulang sepanjang sejarah manusia—dan terus berulang hari ini.</p>
+
+    <h3>Pola Pertama: Kebenaran sering ditolak bukan karena tidak rasional, melainkan karena mahal</h3>
+
+    <p>Abu Jahal bukan bodoh. Ia tahu Al-Qur'an itu benar. Ia menolak karena menerima akan meruntuhkan posisi sosialnya. Pola ini, hari ini, masih sering muncul: seseorang tahu bahwa pekerjaannya merugikan orang lain, ia tahu bahwa kebiasaannya merusak, tetapi ia menolak berubah karena harga terlalu tinggi. <strong>Penyangkalan dengan dalih keraguan intelektual sering kali hanya topeng bagi ketidakinginan membayar harga.</strong></p>
+
+    <h3>Pola Kedua: "Setengah percaya" adalah zona berbahaya</h3>
+
+    <p>Di Al-Qur'an, Allah mengecam keras orang-orang munafik—mereka yang percaya dengan mulut tetapi menolak dengan hati—bahkan lebih keras daripada orang kafir terang-terangan. Karena kemunafikan membawa penyakit: merusak dari dalam, tanpa pernah jujur mengakui. Tipologi "setengah percaya" yang kita lihat pada sebagian Quraisy—yakin di hati, menolak dengan mulut—adalah benih kemunafikan. <strong>Penting untuk berani memilih: kalau yakin, katakan; kalau tidak yakin, cari tahu sampai yakin.</strong></p>
+
+    <h3>Pola Ketiga: Tradisi bukan argumen kebenaran</h3>
+
+    <p>"Kami mendapati bapak-bapak kami begini." Ini argumen yang sama, kata demi kata, yang dipakai Quraisy. Hari ini, berapa banyak kebiasaan—dalam keluarga, masyarakat, institusi—yang kita pertahankan hanya karena "sudah begini dari dulu"? Al-Qur'an tidak menerima tradisi sebagai alasan. Setiap tradisi harus diuji: adakah ia benar?</p>
+
+    <h3>Pola Keempat: Kebangkitan adalah soal keadilan</h3>
+
+    <p>Bagi Quraisy, menolak kebangkitan berarti menolak keadilan: tidak akan ada pembalasan, tidak akan ada hisab, yang kuat boleh menindas, yang kaya boleh menumpuk, semuanya berakhir di kubur. Bagi pembaca hari ini, pertanyaan yang sama: kalau tidak ada hari kebangkitan, mengapa tidak korupsi kalau bisa? Mengapa tidak berbohong kalau untung? Mengapa tidak melukai kalau aman? <strong>Tanpa hari akhir, moralitas menjadi sekadar kesepakatan sosial—rapuh, sewenang-wenang, mudah dikesampingkan ketika tidak menguntungkan.</strong></p>
+
+    <p class="pullquote">
+      Hari kebangkitan bukan sekadar doktrin eskatologis—ia adalah jaminan bahwa keadilan itu nyata. Tanpa jaminan itu, kebenaran menjadi tidak masuk akal untuk dipegang; dengan jaminan itu, kebenaran menjadi satu-satunya yang masuk akal untuk dipegang.
+      <cite>Sintesis refleksi</cite>
+    </p>
+
+    <h3>Pola Kelima: Kebenaran akhirnya menang, tetapi melalui jalan panjang</h3>
+
+    <p>Tiga belas tahun di Makkah. Tiga tahun boikot. Tahun kesedihan. Tha'if. Luka, lapar, penganiayaan. Tetapi pada akhirnya, dalam delapan tahun—Fathu Makkah, 630 M—Nabi ﷺ masuk kota tanpa pertumpahan darah, mengelilingi Ka'bah, dan 360 berhala dihancurkan satu per satu sambil diucapkan: <em>"Telah datang kebenaran dan telah lenyap yang batil; sesungguhnya yang batil itu pasti lenyap."</em> (Al-Isra: 81). <strong>Kebenaran menang—tetapi melalui kesabaran, bukan melalui paksaan.</strong></p>
+  </div>
+</section>
+
+<!-- ============ CLOSING ============ -->
+<section class="closing">
+  <div class="container">
+    <p class="bismillah">وَٱللَّهُ أَعْلَمُ</p>
+    <h2>Setengah percaya adalah permulaan keraguan.<br>Yang utuh—baik menerima maupun menolak—lebih jujur daripada yang ragu-ragu.</h2>
+    <p>Kisah Quraisy mengajarkan bahwa penyangkalan hari kebangkitan, dalam sebagian besar kasus, bukanlah ketidaktahuan. Ialah penyangkalan yang berlaku keraguan, untuk menghindari konsekuensi dari kebenaran yang sebenarnya sudah dikenal. Inilah pelajaran tertua dalam sejarah manusia—dan paling muda untuk terulang.</p>
+    <p>Yang membedakan orang yang sampai pada kebenaran bukanlah kepintaran, melainkan keberanian untuk membayar harganya.</p>
+  </div>
+</section>
+
+<footer>
+  <div>Naskah sejarah &amp; tafsir klasik tentang penyangkalan Yaum al-Qiyamah oleh Quraisy</div>
+  <div style="margin-top:8px;">Rujukan utama: Al-Qur'an al-Karim <span class="star">★</span> Sirah Nabawiyah <span class="star">★</span> Tafsir klasik</div>
+</footer>
+
+<script>
+  // Progress bar
+  const progressBar = document.getElementById('progressBar');
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const percent = (scrollTop / scrollHeight) * 100;
+    progressBar.style.width = percent + '%';
+  });
+</script>
+
+</body>
+</html>
